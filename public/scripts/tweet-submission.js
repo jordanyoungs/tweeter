@@ -1,7 +1,8 @@
 $(document).ready(function() {
   $(".new-tweet form").on("submit", function(event) {
     event.preventDefault();
-    const tweetContent = $(this).find("textarea").val();
+    const $form = $(this);
+    const tweetContent = $form.find("textarea").val();
     const tweetLength = tweetContent.length;
 
     //if tweet length is 0 or undefined
@@ -12,12 +13,19 @@ $(document).ready(function() {
     } else if (tweetLength > 140) {
       alert("Tweet cannot exceed 140 characters!");
 
+    //else tweet is valid
     } else {
-      const urlEncodedTweet = $(this).serialize();
-      $.post("/tweets", urlEncodedTweet);
-      //clear textarea, and reset character counter
-      $(this).find("textarea").val('');
-      $(this).find(".counter").html(140);
+      const urlEncodedTweet = $form.serialize();
+      $.post("/tweets", urlEncodedTweet, function() {
+        //on success clear textarea and reset character counter
+        $form.find("textarea").val('');
+        $form.find(".counter").html(140);
+
+        //then immediately render the new tweet
+        $.get("/tweets", function(tweetDatabase) {
+          $('#tweets').prepend(createTweetElement(tweetDatabase[0]));
+        });
+      });
     }
   });
 });
