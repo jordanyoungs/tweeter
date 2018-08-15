@@ -138,6 +138,12 @@ function renderTweets(tweetDatabase) {
   }
 }
 
+function loadTweets() {
+  $.get("/tweets", function(tweetDatabase) {
+    renderTweets(tweetDatabase);
+  })
+}
+
 $(document).ready(function() {
-  renderTweets(tweetDatabase);
+  loadTweets();
 });
