@@ -32,9 +32,10 @@
       <span class="header">Tweeter</span>
     </nav>
 
-    <!-- Page-specific (main) content here -->
+
     <main class="container">
 
+      <!-- compose new tweet form -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
@@ -46,28 +47,11 @@
         </form>
       </section>
 
+      <!-- feed of old tweets -->
       <section id="tweets">
-
-        <article class="tweet">
-          <header>
-            <img class="avatar" src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png">
-            <h2 class="name">Bill Fields</h2>
-            <h5 class="handle">@MrFields</h5>
-          </header>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel lectus facilisis, consequat lorem in, venenatis odio. Duis pulvinar nisi s</p>
-          <footer>
-            <div class="timestamp">10 Days Ago</div>
-            <span class="icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </span>
-          </footer>
-        </article>
-
+        <!-- app.js will render tweets and append them here -->
       </section>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel lectus facilisis, consequat lorem in, venenatis odio. Duis pulvinar nisi sit amet dolor gravida, eu convallis eros fermentum. Phasellus tempus leo non leo convallis mollis. In consectetur fermentum sollicitudin. Aliquam erat volutpat. Praesent quis enim lacus. Vestibulum quis odio dapibus, suscipit neque imperdiet, vestibulum nunc. Cras aliquet scelerisque ultrices.</p>
     </main>
 
   </body>
