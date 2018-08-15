@@ -15,8 +15,9 @@ $(document).ready(function() {
     } else {
       const urlEncodedTweet = $(this).serialize();
       $.post("/tweets", urlEncodedTweet);
-      //clear textarea
+      //clear textarea, and reset character counter
       $(this).find("textarea").val('');
+      $(this).find(".counter").html(140);
     }
   });
 });
