@@ -49,6 +49,7 @@ article.tweet .handle {
 /*Actual Tweet Text*/
 article.tweet p {
   margin: 1em;
+  overflow-wrap: break-word;
 }
 
 /*Footer*/
