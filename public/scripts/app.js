@@ -59,7 +59,6 @@
 
 //takes in a number a unit and returns "number units ago"
 function timePassedString(number, unit) {
-
   let string = `${number} ${unit}`;
   if (number > 1) string += "s";
   string += " ago";
@@ -68,7 +67,6 @@ function timePassedString(number, unit) {
 
 //takes in a unix timestamp and returns how long ago that timestamp was
 function formatTimestamp(timestamp) {
-
   const currentTime = new Date().getTime();
   const timePassed = currentTime - timestamp;
 
@@ -100,7 +98,6 @@ function formatTimestamp(timestamp) {
 
 //takes in a tweet object and returns a jquery header element for it
 function createTweetHeader(tweetData) {
-
   const $avatar = $("<img>").addClass("avatar").attr("src", tweetData.user.avatars.small);
   const $name = $("<h2>").addClass("name").append(tweetData.user.name);
   const $handle = $("<h5>").addClass("handle").append(tweetData.user.handle);
@@ -111,7 +108,6 @@ function createTweetHeader(tweetData) {
 
 //takes in a tweet object and returns a jquery footer element for it
 function createTweetFooter(tweetData) {
-
   const $timestamp = $("<div>").addClass("timestamp").append(formatTimestamp(tweetData.created_at));
   const $icons = $("<span>").addClass("icons");
   $icons.append("<i class='fas fa-flag'></i>", "<i class='fas fa-retweet'></i>", "<i class='fas fa-heart'></i>");
@@ -122,7 +118,6 @@ function createTweetFooter(tweetData) {
 
 //takes in a tweet object and returns a complete jquery tweet object for it
 function createTweetElement(tweetData) {
-
   const $header = createTweetHeader(tweetData);
   const $content = $("<p>").append(tweetData.content.text);
   const $footer = createTweetFooter(tweetData);
@@ -143,8 +138,6 @@ function renderTweets(tweetDatabase) {
   }
 }
 
-//document.ready recommended syntax
-$( function() {
-  //document is ready here
+$(document).ready(function() {
   renderTweets(tweetDatabase);
 });
