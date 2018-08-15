@@ -31,15 +31,6 @@ $( function() {
   console.log($tweet); // to see what it looks like
   $('#tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
-  function createTweetElement(tweetData) {
-    const $header = createTweetHeader(tweetData);
-    const $content = $("<p>").append(tweetData.content.text);
-    const $footer = createTweetFooter(tweetData);
-
-    const $tweet = $("<article>").addClass("tweet");
-    $tweet.append($header, $content, $footer);
-    return $tweet;
-  }
 
   function createTweetHeader(tweetData) {
     const $avatar = $("<img>").addClass("avatar").attr("src", tweetData.user.avatars.small);
@@ -51,12 +42,58 @@ $( function() {
   }
 
   function createTweetFooter(tweetData) {
-    const $timestamp = $("<div>").addClass("timestamp").append(tweetData.created_at);
+    const $timestamp = $("<div>").addClass("timestamp").append(formatTimestamp(tweetData.created_at));
     const $icons = $("<span>").addClass("icons");
     $icons.append("<i class='fas fa-flag'></i>", "<i class='fas fa-retweet'></i>", "<i class='fas fa-heart'></i>");
 
     const $footer = $("<footer>").append($timestamp, $icons);
     return $footer;
+  }
+
+  function createTweetElement(tweetData) {
+    const $header = createTweetHeader(tweetData);
+    const $content = $("<p>").append(tweetData.content.text);
+    const $footer = createTweetFooter(tweetData);
+
+    const $tweet = $("<article>").addClass("tweet");
+    $tweet.append($header, $content, $footer);
+    return $tweet;
+  }
+
+  function formatTimestamp(timestamp) {
+    const currentTime = new Date().getTime();
+    const timePassed = currentTime - timestamp;
+
+    const second = 1000;
+    const minute = 60 * second;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    const year = 365 * day;
+    const month = year / 12;
+
+    switch (true) {
+      case (timePassed >= year):
+        return timePassedString(~~(timePassed / year), "year");
+      case (timePassed >= month):
+        return timePassedString(~~(timePassed / month), "month");
+      case (timePassed >= day):
+        return timePassedString(~~(timePassed / day), "day");
+      case (timePassed >= hour):
+        return timePassedString(~~(timePassed / hour), "hour");
+      case (timePassed >= minute):
+        return timePassedString(~~(timePassed / minute), "minute");
+      case (timePassed >= second):
+        return timePassedString(~~(timePassed / second), "second");
+      default:
+        return "Just Now";
+    }
+  }
+
+  function timePassedString(number, unit) {
+    let string = `${number} ${unit}`;
+    if (number > 1) string += "s";
+    string += " ago";
+    return string;
   }
   // <section id="tweets">
 
