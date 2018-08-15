@@ -69,7 +69,7 @@ function createTweetFooter(tweetData) {
 //takes in a tweet object and returns a complete jquery tweet object for it
 function createTweetElement(tweetData) {
   const $header = createTweetHeader(tweetData);
-  const $content = $("<p>").append(tweetData.content.text);
+  const $content = $("<p>").text(tweetData.content.text);
   const $footer = createTweetFooter(tweetData);
 
   const $tweet = $("<article>").addClass("tweet");
