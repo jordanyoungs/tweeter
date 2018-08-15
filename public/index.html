@@ -6,27 +6,68 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <footer>
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </footer>
+        </form>
+      </section>
+
+      <section id="tweets">
+
+        <article class="tweet">
+          <header>
+            <img class="avatar" src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png">
+            <h2 class="name">Bill Fields</h2>
+            <h5 class="handle">@MrFields</h5>
+          </header>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel lectus facilisis, consequat lorem in, venenatis odio. Duis pulvinar nisi s</p>
+          <footer>
+            <div class="timestamp">10 Days Ago</div>
+            <span class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </span>
+          </footer>
+        </article>
+
+      </section>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel lectus facilisis, consequat lorem in, venenatis odio. Duis pulvinar nisi sit amet dolor gravida, eu convallis eros fermentum. Phasellus tempus leo non leo convallis mollis. In consectetur fermentum sollicitudin. Aliquam erat volutpat. Praesent quis enim lacus. Vestibulum quis odio dapibus, suscipit neque imperdiet, vestibulum nunc. Cras aliquet scelerisque ultrices.</p>
     </main>
 
   </body>
