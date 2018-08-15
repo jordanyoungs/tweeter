@@ -5,21 +5,46 @@
   right: 0;
   height: 80px;
   background-color: #00a087;
-  font-color: #e8fdff;
+  color: #e8fdff;
   padding-left: 2em;
   padding-right: 2em;
   z-index: 9999;
 }
 
+/*bird logo*/
 #nav-bar .logo {
   height: 80px;
   width: 80px;
   float: left;
 }
 
+/*"Tweeter"*/
 #nav-bar .header {
   float: left;
   font-size: 2em;
   line-height: 80px;
   margin-left: 10px;
+}
+
+/*span that holds buttons (currently just one)*/
+#nav-bar .buttons {
+  float: right;
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+
+/*'compose' button */
+#form-toggle {
+  height: 60px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #e8fdff;
+  color: #00a087;
+}
+
+#form-toggle:hover {
+  background-color: white;
+  color: black;
 }
