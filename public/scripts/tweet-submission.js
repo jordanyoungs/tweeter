@@ -1,17 +1,23 @@
 $(document).ready( () => {
+  //slideUp error message right away, to keep it hidden
+  $("#error-message").slideUp(0);
+
   $("#new-tweet form").on("submit", function(event) {
     event.preventDefault();
+    $("#error-message").slideUp(0);
     const $form = $(this);
     const tweetContent = $form.find("textarea").val();
     const tweetLength = tweetContent.length;
 
     //if tweet length is 0 or undefined
     if (!tweetLength) {
-      alert("Tweet cannot be empty!");
+      $("#error-message").text("Tweet cannot be empty!");
+      $("#error-message").slideDown(300);
 
     //if tweet length is over 140 characters
     } else if (tweetLength > 140) {
-      alert("Tweet cannot exceed 140 characters!");
+      $("#error-message").text("Tweet cannot exceed 140 characters!");
+      $("#error-message").slideDown(300);
 
     //else tweet is valid
     } else {
