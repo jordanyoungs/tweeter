@@ -1,3 +1,5 @@
+// Update the character counter as the user types, turn red if negative
+
 $(document).ready( () => {
   $("#new-tweet textarea").on("keyup", function() {
     const $tweet = $(this);

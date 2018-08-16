@@ -95,6 +95,7 @@ function loadTweets() {
   })
 }
 
+
 $(document).ready( () => {
   loadTweets();
 });

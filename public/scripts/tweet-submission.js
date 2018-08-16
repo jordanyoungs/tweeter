@@ -1,10 +1,16 @@
+// Send post request for new tweets that aren't empty or over limit
+// Then immediately render the new tweet
+
 $(document).ready( () => {
   //slideUp error message right away, to keep it hidden
   $("#error-message").slideUp(0);
 
+  // New tweet is being submitted
   $("#new-tweet form").on("submit", function(event) {
     event.preventDefault();
+    // clear any lingering error messages from past
     $("#error-message").slideUp(0);
+
     const $form = $(this);
     const tweetContent = $form.find("textarea").val();
     const tweetLength = tweetContent.length;
