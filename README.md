@@ -30,6 +30,6 @@ Some of the functionality the page has:
 ## Screenshots
 
 !["Screenshot of Home page"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Home.png?raw=true)
-!["Screenshot of Error message"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Error.png?raw=true)
 !["Screenshot during slide animation"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Slide.png?raw=true)
 !["Screenshot after slide, form is hidden"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Slide2.png?raw=true)
+!["Screenshot of Error message"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Error.png?raw=true)
