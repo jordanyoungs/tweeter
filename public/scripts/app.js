@@ -90,11 +90,11 @@ function renderTweets(tweetDatabase) {
 
 //send ajax request to get JSON tweet database, then render them on the page
 function loadTweets() {
-  $.get("/tweets", function(tweetDatabase) {
+  $.get("/tweets", (tweetDatabase) => {
     renderTweets(tweetDatabase);
   })
 }
 
-$(document).ready(function() {
+$(document).ready( () => {
   loadTweets();
 });

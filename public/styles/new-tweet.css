@@ -1,4 +1,4 @@
-section.new-tweet {
+#new-tweet {
   background-color: #eee;
   margin: 0 2em;
   border-style: solid;
@@ -6,19 +6,19 @@ section.new-tweet {
   border-radius: 5px;
 }
 
-.new-tweet > h2 {
+#new-tweet h2 {
   border-bottom-style: solid;
   margin: 10px;
 }
 
-.new-tweet footer {
+#new-tweet footer {
   position: relative;
   bottom: 10px;
   left: 10px;
   margin-top: 10px;
 }
 
-.new-tweet textarea {
+#new-tweet textarea {
   /*multiple width declarations to work on different browsers*/
   width: -webkit-fill-available;
   width: -moz-available;
@@ -28,7 +28,7 @@ section.new-tweet {
   padding: 5px;
 }
 
-.new-tweet .counter {
+#new-tweet .counter {
   font-size: small;
   font-style: italic;
   position: absolute;
@@ -36,6 +36,6 @@ section.new-tweet {
   line-height: 25px;
 }
 
-.new-tweet .counter.negative {
+#new-tweet .counter.negative {
   color: red;
 }
