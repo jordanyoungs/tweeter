@@ -29,7 +29,14 @@ Some of the functionality the page has:
 
 ## Screenshots
 
+Home page
 !["Screenshot of Home page"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Home.png?raw=true)
+
+Compose box being hidden (mid-animation)
 !["Screenshot during slide animation"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Slide.png?raw=true)
+
+Hidden Compose box
 !["Screenshot after slide, form is hidden"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Slide2.png?raw=true)
+
+Tweet Error Message
 !["Screenshot of Error message"](https://github.com/jordanyoungs/tweeter/blob/master/docs/Error.png?raw=true)
