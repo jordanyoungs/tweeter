@@ -5,11 +5,11 @@ Tweeter is a simple, single-page Twitter clone.
 This is a project I built as part of the web development bootcamp at Lighthouse Labs. I was able to practice HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Express and MongoDB back-end skills.
 
 Some of the functionality the page has:
--Tweets are loaded from Mongo database
--The compose form can slide in or out of view by clicking the compose button
--Character counter updates live based on text input
--Error messages are given if a tweet is empty or over the character limit
--New tweets are submitted (with a random username and avatar) and saved
+- Tweets are loaded from Mongo database
+- The compose form can slide in or out of view by clicking the compose button
+- Character counter updates live based on text input
+- Error messages are given if a tweet is empty or over the character limit
+- New tweets are submitted (with a random username and avatar) and saved
  to the Mongo database, then rendered immediately on the page without refresh
 
 ## Getting Started
